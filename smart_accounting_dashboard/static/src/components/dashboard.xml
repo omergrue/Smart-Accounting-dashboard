@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="smart_accounting_dashboard.dashboard" owl="1">
+        <div class="smart-dashboard-container o_content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="smart-dashboard-title">Smart Accounting Dashboard</h1>
+                <button class="btn btn-primary smart-refresh-btn" t-on-click="onRefresh">
+                    <i class="fa fa-refresh me-2"></i>Refresh Data
+                </button>
+            </div>
+
+            <!-- KPI Ribbon -->
+            <div class="row g-4 mb-4">
+                <div class="col-12 col-md-3">
+                    <div class="card smart-kpi-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted">Total Revenue</h5>
+                            <h2 class="card-text text-primary mt-2">
+                                <span t-esc="formatCurrency(state.data.total_income)"/>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card smart-kpi-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted">Total Expenses</h5>
+                            <h2 class="card-text text-danger mt-2">
+                                <span t-esc="formatCurrency(state.data.total_costs)"/>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card smart-kpi-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted">Net Profit</h5>
+                            <h2 class="card-text text-success mt-2">
+                                <span t-esc="formatCurrency(state.data.net_profit)"/>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card smart-kpi-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted">Cash on Hand</h5>
+                            <h2 class="card-text text-info mt-2">
+                                <span t-esc="formatCurrency(state.data.liquidity)"/>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="row g-4">
+                <!-- Bar Chart: Profit vs Cost -->
+                <div class="col-12 col-lg-8">
+                    <div class="card smart-chart-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted mb-4">Financial Overview (Profit vs Cost)</h5>
+                            <div class="position-relative" style="height: 350px;">
+                                <canvas t-ref="barChartCanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pie Chart: Revenue Breakdown (Using AR as proxy or pie chart from AR) -->
+                <div class="col-12 col-lg-4">
+                    <div class="card smart-chart-card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title text-muted mb-4">Revenue Breakdown</h5>
+                            <div class="position-relative" style="height: 350px;">
+                                <canvas t-ref="pieChartCanvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

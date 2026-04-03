@@ -1,0 +1,50 @@
+.smart-dashboard-container {
+    padding: 24px;
+    background-color: #F5F7FA; /* gray.50 */
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+
+    .smart-dashboard-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #0A1D37; /* blue.900 */
+        margin: 0;
+    }
+
+    .smart-refresh-btn {
+        background-color: #396AFF; /* blue.500 */
+        border-color: #396AFF;
+        border-radius: 8px;
+        font-weight: 500;
+        
+        &:hover {
+            background-color: #2D5BFF; /* blue.600 */
+        }
+    }
+
+    .smart-kpi-card, .smart-chart-card {
+        border-radius: 12px;
+        border: 1px solid #EDF1F7; /* gray.100 */
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05) !important;
+        
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .card-text {
+            font-size: 28px;
+            font-weight: 700;
+            
+            &.text-primary { color: #396AFF !important; }
+            &.text-danger { color: #FF4B4A !important; }
+            &.text-success { color: #4ADE80 !important; }
+            &.text-info { color: #FEAA09 !important; }
+        }
+    }
+}
