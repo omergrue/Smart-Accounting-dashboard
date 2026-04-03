@@ -15,6 +15,7 @@
             "smart_accounting_dashboard/static/src/components/dashboard.js",
         ],
     },
+    "images": ["static/description/screenshot.png"],
     "installable": True,
     "application": True,
     "license": "LGPL-3",
