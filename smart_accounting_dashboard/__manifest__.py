@@ -1,5 +1,5 @@
 {
-    "name": "Smart odoo module accounting dashboard",
+    "name": "Smart accounting dashboard",
     "version": "1.0.0",
     "author": "DevLands",
     "price": "100.00",
